@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>
+
+	<appender name="console" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p %c:%L - %m%n" />
+		</layout>
+	</appender>
+
+	<!-- APPENDER FOR APPLICATION LOG MESSAGES -->
+	<appender name="appender_name_app" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="/F:/Software/Spark/data/ProcessingLogs.log" />
+		<param name="Append" value="true" />
+		<param name="MaxFileSize" value="10MB" />
+		<param name="MaxBackupIndex" value="20" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p %c:%L - %m%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMax" value="WARN" />
+		</filter>
+	</appender>
+
+
+	<!-- APPENDER FOR ERROR LOG MESSAGES -->
+	<appender name="appender_name_err" class="org.apache.log4j.RollingFileAppender">
+		<param name="File"
+			value="F:/Software/Spark/data/ProcessingErrLogs.log" />
+		<param name="Append" value="true" />
+		<param name="MaxFileSize" value="10MB" />
+		<param name="MaxBackupIndex" value="20" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p %c:%L - %m%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="ERROR" />
+		</filter>
+	</appender>
+
+	<!-- PUTTING IT ALL TO THE LOGGER -->
+    <logger name="com"> 
+	    <appender-ref ref="appender_name_app" />
+	    <appender-ref ref="appender_name_err" />
+	  <!--  <appender-ref ref="console" /> -->
+    </logger>
+
+
+</log4j:configuration>

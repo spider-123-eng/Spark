@@ -1,0 +1,4 @@
+Please note that here we have just defined RDD, data is not loaded still. 
+This means that if you go to access the data in this RDD it could fail. 
+The computation to create the data in an RDD is only done when the data is referenced;
+for example, it is created by caching or writing out the RDD
