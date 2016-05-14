@@ -10,7 +10,7 @@ object SparkStructType extends LogHelper {
     val conf = new SparkConf().setAppName("Spark-StructType-Example").setMaster("local[1]")
     val sc = new SparkContext(conf)
     val sqlContext = new org.apache.spark.sql.SQLContext(sc)
-    val person = sc.textFile("F:/Software/Spark/data/person.txt")
+    val person = sc.textFile("E:/Software/Spark/data/person.txt")
 
     val schema = StructType(Array(StructField("firstName", StringType, true), StructField("lastName", StringType, true), StructField("age", IntegerType, true)))
     val rowRDD = person.map(_.split(",")).map(p => org.apache.spark.sql.Row(p(0), p(1), p(2).toInt))
@@ -19,9 +19,12 @@ object SparkStructType extends LogHelper {
     sqlContext.sql("select * from person").foreach(println)
 
     //saving as parquet file
-    val path = "F:/Software/Spark/data/person-" + Utills.getTime()
+    val path = "E:/Software/Spark/data/person-" + Utills.getTime()
     personDF.coalesce(1).write.parquet(path)
 
+    //saving DataFrame as Text file
+    //personDF.rdd.coalesce(1, false).saveAsTextFile(path)
+    
     //reading a parquet file 
     val parqfileDF = sqlContext.read.parquet(path)
     parqfileDF.filter("age > 25").show()
