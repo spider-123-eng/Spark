@@ -1,5 +1,3 @@
-/* Copyright (C) Fujitsu Network Communications, Inc. 2016 - All Rights Reserved
-*/
 
 package com.spark.util
 import java.text.SimpleDateFormat
@@ -9,11 +7,7 @@ import java.util.Calendar
 import java.util.Date
 import java.util.TimeZone
 import java.time.LocalDate
-/**
- * The Object Utills.
- * This Object is used to maintain all the common utility methods .
- * @author RKUMARRE
- */
+
 object Utills extends Serializable {
   
   val tz = TimeZone.getTimeZone("UTC")
