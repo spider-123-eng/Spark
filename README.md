@@ -1,5 +1,5 @@
 # Spark
-This project will have sample programs for Spark in Scala launguage .
+This project contains simple programs for Spark in Scala launguage .
 
 Topics Covered :     
 ----------------
