@@ -13,7 +13,7 @@ Spark DataFrames API.
 Spark SQL.      
 Spark Hive Context.     
 Kafka Producer.     
-Kafka Consumer using Spark integration Kafka.     
+Kafka Consumer by Spark integration with Kafka.     
 Spark File Streaming.     
 Spark JDBC Connection.      
 Scala Case Class limitations overcoming by using Struct Type.     
