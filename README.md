@@ -1,2 +1,29 @@
 # Spark
 This project will have sample programs for Spark in Scala launguage .
+
+Topics Covered :     
+----------------
+Spark Transformations.   
+Spark To Cassandra connection and storage.      
+Spark Kafka Integration.       
+Spark Streaming with Kafka.     
+Storing the Spark Streaming data in to HDFS.      
+Storing the Spark Streaming data in to Cassandra.       
+Spark DataFrames API.     
+Spark SQL.      
+Spark Hive Context.     
+Kafka Producer.     
+Kafka Consumer using Spark integration Kafka.     
+Spark File Streaming.     
+Spark JDBC Connection.      
+Scala Case Class limitations overcoming by using Struct Type.     
+Reading CSV,Json data in Spark.     
+Spark Joins.      
+Spark Aggregations using DataFrame API.     
+Storing data as text,parquet file in to HDFS. 
+
+Spark Use cases :
+----------------
+Analysing different kinds of data sets and solving the problem statements.  
+
+
