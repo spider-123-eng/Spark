@@ -6,7 +6,6 @@ import java.util.Random
 import java.util.Calendar
 import java.util.Date
 import java.util.TimeZone
-import java.time.LocalDate
 
 object Utills extends Serializable {
   
@@ -115,13 +114,6 @@ object Utills extends Serializable {
     val twodaysBeforDate = cal.getTime()
     return format.format(twodaysBeforDate)
   }
-
-  def getCurrentDay(): String =
-    {
-      val date = LocalDate.now()
-      val dayname = date.getDayOfWeek().toString()
-      return dayname
-    }
 
   def getDurationBreakdown(millis: Long): String = {
 
