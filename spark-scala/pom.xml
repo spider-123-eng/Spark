@@ -6,25 +6,24 @@
 	<version>1.0-SNAPSHOT</version>
 	<name>Spark Scala Demo Application</name>
 	<url>http://maven.apache.org</url>
-	<!-- Maven profiles allow you to support both Scala 2.10 and Scala 2.11 
-		with the right dependencies for modules specified for each version separately -->
-	 <repositories>
+	<repositories>
 		<repository>
 			<id>codelds</id>
 			<url>https://code.lds.org/nexus/content/groups/main-repo</url>
 		</repository>
-	</repositories> 
-
+	</repositories>
 
 	<profiles>
 		<profile>
-			<id>scala-2.11</id>
+			<id>scala-2.10</id>
 			<activation>
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<properties>
-				<scalaVersion>2.11.7</scalaVersion>
-				<scalaBinaryVersion>2.11</scalaBinaryVersion>
+				<scalaVersion>2.10.4</scalaVersion>
+				<scalaBinaryVersion>2.10</scalaBinaryVersion>
+				<encoding>UTF-8</encoding>
+				<log4j.version>1.2.17</log4j.version>
 			</properties>
 			<dependencies>
 				<dependency>
@@ -32,10 +31,15 @@
 					<artifactId>scala-library</artifactId>
 					<version>${scalaVersion}</version>
 				</dependency>
+				<dependency>
+					<groupId>org.scala-lang</groupId>
+					<artifactId>scala-compiler</artifactId>
+					<version>${scalaVersion}</version>
+				</dependency>
 
 				<dependency>
 					<groupId>org.apache.spark</groupId>
-					<artifactId>spark-core_2.11</artifactId>
+					<artifactId>spark-core_2.10</artifactId>
 					<version>1.5.2</version>
 				</dependency>
 
@@ -47,7 +51,7 @@
 
 				<dependency>
 					<groupId>org.apache.spark</groupId>
-					<artifactId>spark-streaming_2.11</artifactId>
+					<artifactId>spark-streaming_2.10</artifactId>
 					<version>1.5.2</version>
 				</dependency>
 
@@ -60,14 +64,19 @@
 				<dependency>
 					<groupId>org.apache.spark</groupId>
 					<artifactId>spark-hive_2.10</artifactId>
-					<version>1.2.1</version>
+					<version>1.5.2</version>
 				</dependency>
-
-				<!-- Cassandra Client Driver -->
 				<dependency>
 					<groupId>com.datastax.spark</groupId>
-					<artifactId>spark-cassandra-connector_2.11</artifactId>
+					<artifactId>spark-cassandra-connector_2.10</artifactId>
 					<version>1.5.0-M3</version>
+				</dependency>
+
+				<!-- log 4j -->
+				<dependency>
+					<groupId>log4j</groupId>
+					<artifactId>log4j</artifactId>
+					<version>${log4j.version}</version>
 				</dependency>
 
 				<!-- ORACLE database driver -->
@@ -88,8 +97,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.1</version>
 				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -105,16 +114,49 @@
 				</executions>
 				<configuration>
 					<args>
-						<!-- work-around for https://issues.scala-lang.org/browse/SI-8358 -->
 						<arg>-nobootcp</arg>
 					</args>
 				</configuration>
 			</plugin>
-			<!-- <plugin> <artifactId>maven-assembly-plugin</artifactId> <version>2.4.1</version> 
-				<configuration> <descriptorRefs> <descriptorRef>jar-with-dependencies</descriptorRef> 
-				</descriptorRefs> </configuration> <executions> <execution> <id>make-assembly</id> 
-				<phase>package</phase> <goals> <goal>single</goal> </goals> </execution> 
-				</executions> </plugin> -->
+			<!-- This will generate a fat jar, added as a work around for spark-cassandra-connector -->
+			<!-- <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>2.4.3</version>
+				<configuration>
+					<createDependencyReducedPom>false</createDependencyReducedPom>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+
+						<configuration>
+							<relocations>
+								<relocation>
+									<pattern>com.google</pattern>
+									<shadedPattern>shadeio</shadedPattern>
+									<includes>
+										<include>com.google.**</include>
+									</includes>
+								</relocation>
+							</relocations>
+							<filters>
+								<filter>
+									<artifact>*:*</artifact>
+									<excludes>
+										<exclude>META-INF/*.SF</exclude>
+										<exclude>META-INF/*.DSA</exclude>
+										<exclude>META-INF/*.RSA</exclude>
+									</excludes>
+								</filter>
+							</filters>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin> -->
 		</plugins>
 	</build>
 
