@@ -2,14 +2,15 @@ package com.spark.usecases
 import org.apache.spark.SparkConf
 import org.apache.spark.SparkContext
 import org.apache.spark.sql.functions._
+import com.spark.util.Utills
 object TravelDataAnalysis {
   def main(args: Array[String]) {
     val conf = new SparkConf().setAppName("Travel-Data-Analysis").setMaster("local[1]")
     val sc = new SparkContext(conf)
     val sqlContext = new org.apache.spark.sql.SQLContext(sc)
-    val textFile = sc.textFile("E:/Software/Spark/data/TravelData.txt")
+    val textFile = sc.textFile(Utills.DATA_PATH + "/TravelData.txt")
     val travelDataRDD = textFile.mapPartitions(_.drop(1)) //remove the header information from the file
-    
+
     //Top 20 destination people travel the most  
     val top20DestinationRDD = travelDataRDD.map(lines => lines.split('\t')).
       map(x => (x(2), 1)).reduceByKey(_ + _).
