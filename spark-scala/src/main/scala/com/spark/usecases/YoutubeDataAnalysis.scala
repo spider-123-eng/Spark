@@ -2,14 +2,15 @@ package com.spark.usecases
 import org.apache.spark.SparkConf
 import org.apache.spark.SparkContext
 import org.apache.spark.sql.functions._
+import com.spark.util.Utills
 object YoutubeDataAnalysis {
 
   def main(args: Array[String]) {
     val conf = new SparkConf().setAppName("Youtube-Data-Analysis").setMaster("local[1]")
     val sc = new SparkContext(conf)
     val sqlContext = new org.apache.spark.sql.SQLContext(sc)
-    val textFile = sc.textFile("E:/Software/Spark/data/youtubedata.txt")
-    
+    val textFile = sc.textFile(Utills.DATA_PATH + "/youtubedata.txt")
+
     //Here, we will find out what are the top five categories with maximum number of videos uploaded.
     // val counts = textFile.map(line => { var YoutubeRecord = ""; val temp = line.split("\t"); ; if (temp.length >= 3) { YoutubeRecord = temp(3) }; YoutubeRecord })
     val counts = textFile.map(_.split("\t")).filter(_.length >= 3).map(_(3))

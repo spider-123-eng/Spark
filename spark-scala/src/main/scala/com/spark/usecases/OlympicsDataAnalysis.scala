@@ -1,12 +1,13 @@
 package com.spark.usecases
 import org.apache.spark.SparkConf
 import org.apache.spark.SparkContext
+import com.spark.util.Utills
 object OlympicsDataAnalysis {
   def main(args: Array[String]) {
     val conf = new SparkConf().setAppName("Travel-Data-Analysis").setMaster("local[1]")
     val sc = new SparkContext(conf)
     val sqlContext = new org.apache.spark.sql.SQLContext(sc)
-    val textFile = sc.textFile("E:/Software/Spark/data/olympics_data.txt")
+    val textFile = sc.textFile(Utills.DATA_PATH + "/olympics_data.txt")
     val olympicsDataRDD = textFile.mapPartitions(_.drop(1)) //remove the header information from the file
     val lines = olympicsDataRDD.filter { x => { if (x.toString().split(",").length >= 10) true else false } }
       .map(line => { line.toString().split(",") })

@@ -1,6 +1,7 @@
 package com.spark.usecases
 import org.apache.spark.SparkConf
 import org.apache.spark.SparkContext
+import com.spark.util.Utills
 object NamesAnalysis {
   def main(args: Array[String]) {
     val conf = new SparkConf().setAppName("Names-Analysis").setMaster("local[1]")
@@ -8,10 +9,10 @@ object NamesAnalysis {
     val sqlContext = new org.apache.spark.sql.SQLContext(sc)
     import sqlContext.implicits._
 
-    val babyNamesRDD = sc.textFile("E:/Software/Spark/data/baby_names.txt")
+    val babyNamesRDD = sc.textFile(Utills.DATA_PATH + "/baby_names.txt")
 
     //remove the header information from the file
-    val dropHeaderRDD = babyNamesRDD.mapPartitions(_.drop(1)) 
+    val dropHeaderRDD = babyNamesRDD.mapPartitions(_.drop(1))
     val rows = dropHeaderRDD.map(line => line.split(","))
 
     //unique counties over the years of data collect

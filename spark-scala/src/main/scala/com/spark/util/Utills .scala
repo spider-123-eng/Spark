@@ -8,7 +8,7 @@ import java.util.Date
 import java.util.TimeZone
 
 object Utills extends Serializable {
-  
+  val DATA_PATH = "E:/Software/Spark/data/"
   val tz = TimeZone.getTimeZone("UTC")
   def getTime(): String = {
     val pattern = "dd-MM-yyyy-HH-mm-ss"
