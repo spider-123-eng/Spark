@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.spark.scala</groupId>
 	<artifactId>spark-scala</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.0</version>
 	<name>Spark Scala Demo Application</name>
 	<url>http://maven.apache.org</url>
 	<repositories>
@@ -95,14 +95,19 @@
 			<artifactId>commons-dbcp2</artifactId>
 			<version>${apache.common.version}</version>
 		</dependency>
-	
-	<!-- ORACLE database driver -->
-				<dependency>
-					<groupId>com.oracle</groupId>
-					<artifactId>ojdbc6</artifactId>
-					<version>11.2.0.3</version>
-				</dependency>
-	
+		<!-- Test -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>${postgresql.version}</version>
+		</dependency>
 
 
 		<dependency>
