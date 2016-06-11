@@ -42,13 +42,20 @@ Cassandra 2.2.1
 
 Sample Spark Submit commands for the programs in this blog :             
 
-spark-submit --class com.spark.transformations.examples.Filter --master local[2] /hdp/dev/lib/spark-scala-1.0.jar
-spark-submit --class com.spark.examples.KafkaProducer --master local[2] /hdp/dev/lib/spark-scala-1.0.jar 192.168.19.130:6667 test
+spark-submit --class com.spark.transformations.examples.Filter --master local[2] /hdp/dev/lib/spark-scala-1.0.jar  
+
+spark-submit --class com.spark.examples.KafkaProducer --master local[2] /hdp/dev/lib/spark-scala-1.0.jar 192.168.19.130:6667 test  
+
 spark-submit --class com.spark.examples.KafkaConsumer --master local[2] /hdp/dev/lib/spark-scala-1.0.jar 192.168.19.130:6667 test
-spark-submit --class com.spark.usecases.NamesAnalysis --master local[2] /hdp/dev/lib/spark-scala-1.0.jar
-spark-submit --class com.spark.usecases.OlaDataAnalysis --master local[2] /hdp/dev/lib/spark-scala-1.0.jar
-spark-submit --class com.spark.examples.KafkaConsumerToCassandra --master local[2] /hdp/dev/lib/spark-scala-1.0.jar 192.168.19.130:6667 test
-spark-submit --class com.spark.examples.KafkaConsumerToHDFS --master local[2] /hdp/dev/lib/spark-scala-1.0.jar 192.168.19.130:6667 test
+
+spark-submit --class com.spark.usecases.NamesAnalysis --master local[2] /hdp/dev/lib/spark-scala-1.0.jar            
+
+spark-submit --class com.spark.usecases.OlaDataAnalysis --master local[2] /hdp/dev/lib/spark-scala-1.0.jar        
+
+spark-submit --class com.spark.examples.KafkaConsumerToCassandra --master local[2] /hdp/dev/lib/spark-scala-1.0.jar 192.168.19.130:6667 test                                      
+
+spark-submit --class com.spark.examples.KafkaConsumerToHDFS --master local[2] /hdp/dev/lib/spark-scala-1.0.jar 192.168.19.130:6667 test                         
+
 
 --------------------------------------------------------------------------------------------------------------------------------------
 Kafka commands ::::
