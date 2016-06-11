@@ -8,7 +8,7 @@ import org.apache.spark.SparkContext
 import org.apache.spark.streaming.Minutes
 import org.apache.spark.streaming.StreamingContext
 import org.apache.spark.streaming.kafka.KafkaUtils
-
+import com.spark.util._
 import kafka.serializer.StringDecoder
 object KafkaConsumerToHDFS {
   private val conf = new Configuration()
@@ -19,8 +19,7 @@ object KafkaConsumerToHDFS {
   val SLIDE_INTERVAL = 1
   def startStreaming(args: Array[String]): Unit = {
     try {
-      val zkQuorum = "10.220.11.171:9092";
-      val topics = "demotest";
+      val Array(zkQuorum, topics) = args
       val sc = new SparkContext(new SparkConf().setAppName("Spark-Kafka-Streaming").setMaster("local[2]"))
       val ssc = new StreamingContext(sc, Minutes(SLIDE_INTERVAL))
       val topicsSet = topics.split(",").toSet
@@ -34,7 +33,7 @@ object KafkaConsumerToHDFS {
             println(rdd.first())
             println("rdd count  " + rdd.count())
             println("URI = " + uri)
-            val hdfsPath = uri + "/user/data/" 
+            val hdfsPath = uri + "/user/data/" + Utills.getTime()
             println("HDFS Path = " + hdfsPath)
             rdd.saveAsTextFile(hdfsPath)
           } else {
@@ -44,8 +43,8 @@ object KafkaConsumerToHDFS {
       ssc.start()
       ssc.awaitTermination()
     } catch {
-      case ex: NoClassDefFoundError => {
-        println(ex.printStackTrace())
+      case ex: Exception => {
+        println(ex.getMessage)
       }
     }
   }

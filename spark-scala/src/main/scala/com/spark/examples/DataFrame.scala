@@ -12,7 +12,7 @@ object DataFrame {
     val sqlContext = new org.apache.spark.sql.SQLContext(sc)
     import sqlContext.implicits._
 
-    val empDataRDD = sc.textFile("E:/Software/Spark/data/emp.txt") //path to emp.txt
+    val empDataRDD = sc.textFile(Utills.DATA_PATH +"emp.txt") //path to emp.txt
     val dropHeaderRDD = empDataRDD.mapPartitions(_.drop(1)) //remove the header information from the file
 
     /*println(dropHeaderRDD.first())

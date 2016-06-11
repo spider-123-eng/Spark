@@ -1,12 +1,13 @@
 package com.spark.transformations.examples
 import org.apache.spark.SparkConf
 import org.apache.spark.SparkContext
+import com.spark.util._
 object Cars {
   def main(args: Array[String]) {
     case class cars(make: String, model: String, mpg: String, cylinders: Integer, engine_disp: Integer, horsepower: Integer, weight: Integer, accelerate: Double, year: Integer, origin: String)
     val conf = new SparkConf().setAppName("Transformations").setMaster("local[1]")
     val sc = new SparkContext(conf)
-    val rawData = sc.textFile(args(0)) //"path to/cars.txt"
+    val rawData = sc.textFile(Utills.DATA_PATH +"cars.txt") //"path to/cars.txt"
     
     rawData.take(5).foreach { x => println(x) }
 

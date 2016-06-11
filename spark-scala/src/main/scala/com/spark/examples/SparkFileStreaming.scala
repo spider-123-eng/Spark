@@ -14,9 +14,7 @@ object SparkFileStreaming {
     val ssc = new StreamingContext(sparkConf, Seconds(3))
 
     // Create the FileInputDStream on the directory and use the
-    // stream to count words in new files created
-    //val lines = ssc.fileStream[LongWritable, Text, TextInputFormat]("F:\\Software\\Spark\\test\\").map(_._2.toString)
-    val lines = ssc.textFileStream("F:\\Software\\Spark\\test\\")
+    val lines = ssc.textFileStream("hdfs://sandbox.hortonworks.com:8020/user/data/")
     val words = lines.flatMap(_.split(" "))
     val wordCounts = words.map(x => (x, 1)).reduceByKey(_ + _)
     wordCounts.print()

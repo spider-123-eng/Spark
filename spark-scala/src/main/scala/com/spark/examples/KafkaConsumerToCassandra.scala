@@ -1,10 +1,7 @@
 package com.spark.examples
 
-import com.datastax.spark.connector.cql.CassandraConnector
 import scala.reflect.runtime.universe
-import org.apache.hadoop.conf.Configuration
-import org.apache.hadoop.fs.FileSystem
-import org.apache.hadoop.fs.Path
+
 import org.apache.spark.SparkConf
 import org.apache.spark.SparkContext
 import org.apache.spark.streaming.Minutes
@@ -14,18 +11,13 @@ import com.datastax.driver.core.Cluster
 import com.datastax.spark.connector.SomeColumns
 import com.datastax.spark.connector.toNamedColumnRef
 import com.datastax.spark.connector.toRDDFunctions
-import com.datastax.spark.connector.toSparkContextFunctions
-import kafka.serializer.StringDecoder
-import org.apache.spark.sql.cassandra.CassandraSQLContext
-
 
 import kafka.serializer.StringDecoder
 object KafkaConsumerToCassandra {
   val SLIDE_INTERVAL = 1
   def startStreaming(args: Array[String]): Unit = {
     try {
-      val zkQuorum = "10.220.11.171:9092";
-      val topics = "demotest";
+      val Array(zkQuorum, topics) = args
       val sc = new SparkContext(new SparkConf().setAppName("Spark-Kafka-Streaming").setMaster("local[2]").set("spark.cassandra.connection.host", "127.0.0.1"))
       val ssc = new StreamingContext(sc, Minutes(SLIDE_INTERVAL))
       val topicsSet = topics.split(",").toSet
@@ -55,8 +47,8 @@ object KafkaConsumerToCassandra {
       ssc.start()
       ssc.awaitTermination()
     } catch {
-      case ex: NoClassDefFoundError => {
-        println(ex.printStackTrace())
+       case ex: Exception => {
+        println(ex.getMessage)
       }
     }
   }

@@ -8,8 +8,11 @@ import java.util.Date
 import java.util.TimeZone
 
 object Utills extends Serializable {
+  
+  // path to your files (hdfs/local)
   val DATA_PATH = "E:/Software/Spark/data/"
-  val tz = TimeZone.getTimeZone("UTC")
+ 
+  val tz = TimeZone.getTimeZone("IST")
   def getTime(): String = {
     val pattern = "dd-MM-yyyy-HH-mm-ss"
     val format = new SimpleDateFormat(pattern)

@@ -12,114 +12,243 @@
 			<url>https://code.lds.org/nexus/content/groups/main-repo</url>
 		</repository>
 	</repositories>
+	<properties>
+		<spark.version>1.5.2</spark.version>
+		<scala.version>2.10.4</scala.version>
+		<scalaBinaryVersion>2.10</scalaBinaryVersion>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
+		<datastax.cassandra.version>3.0.0</datastax.cassandra.version>
+		<junit.version>4.8.1</junit.version>
+		<postgresql.version>9.4.1208.jre7</postgresql.version>
+		<apache.common.version>2.1.1</apache.common.version>
+		<spark-cassandra.version>1.5.0-M3</spark-cassandra.version>
+	</properties>
+	<dependencies>
 
-	<profiles>
-		<profile>
-			<id>scala-2.10</id>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
-			<properties>
-				<scalaVersion>2.10.4</scalaVersion>
-				<scalaBinaryVersion>2.10</scalaBinaryVersion>
-				<encoding>UTF-8</encoding>
-				<log4j.version>1.2.17</log4j.version>
-			</properties>
-			<dependencies>
-				<dependency>
-					<groupId>org.scala-lang</groupId>
-					<artifactId>scala-library</artifactId>
-					<version>${scalaVersion}</version>
-				</dependency>
-				<dependency>
-					<groupId>org.scala-lang</groupId>
-					<artifactId>scala-compiler</artifactId>
-					<version>${scalaVersion}</version>
-				</dependency>
+		<dependency>
+			<groupId>org.scala-lang</groupId>
+			<artifactId>scala-library</artifactId>
+			<version>${scala.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.scala-lang</groupId>
+			<artifactId>scala-compiler</artifactId>
+			<version>${scala.version}</version>
+		</dependency>
 
-				<dependency>
-					<groupId>org.apache.spark</groupId>
-					<artifactId>spark-core_2.10</artifactId>
-					<version>1.5.2</version>
-				</dependency>
+		<!-- spark -->
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-core_2.10</artifactId>
+			<version>${spark.version}</version>
+		</dependency>
 
-				<dependency>
-					<groupId>org.apache.spark</groupId>
-					<artifactId>spark-sql_2.11</artifactId>
-					<version>1.5.2</version>
-				</dependency>
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-sql_2.10</artifactId>
+			<version>${spark.version}</version>
+		</dependency>
 
-				<dependency>
-					<groupId>org.apache.spark</groupId>
-					<artifactId>spark-streaming_2.10</artifactId>
-					<version>1.5.2</version>
-				</dependency>
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-streaming_2.10</artifactId>
+			<version>${spark.version}</version>
+		</dependency>
 
-				<dependency>
-					<groupId>org.apache.spark</groupId>
-					<artifactId>spark-streaming-kafka_2.11</artifactId>
-					<version>1.5.2</version>
-				</dependency>
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-streaming-kafka_2.10</artifactId>
+			<version>${spark.version}</version>
+		</dependency>
 
-				<dependency>
-					<groupId>org.apache.spark</groupId>
-					<artifactId>spark-hive_2.10</artifactId>
-					<version>1.5.2</version>
-				</dependency>
-				<dependency>
-					<groupId>com.datastax.spark</groupId>
-					<artifactId>spark-cassandra-connector_2.10</artifactId>
-					<version>1.5.0-M3</version>
-				</dependency>
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-hive_2.10</artifactId>
+			<version>${spark.version}</version>
+		</dependency>
 
-				<!-- log 4j -->
-				<dependency>
-					<groupId>log4j</groupId>
-					<artifactId>log4j</artifactId>
-					<version>${log4j.version}</version>
-				</dependency>
 
-				<!-- ORACLE database driver -->
+		<!-- spark-cassandra-connector -->
+		<dependency>
+			<groupId>com.datastax.spark</groupId>
+			<artifactId>spark-cassandra-connector_2.10</artifactId>
+			<version>${spark-cassandra.version}</version>
+		</dependency>
+
+		<!-- Test -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>${postgresql.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-dbcp2</artifactId>
+			<version>${apache.common.version}</version>
+		</dependency>
+	
+	<!-- ORACLE database driver -->
 				<dependency>
 					<groupId>com.oracle</groupId>
 					<artifactId>ojdbc6</artifactId>
 					<version>11.2.0.3</version>
 				</dependency>
+	
 
-			</dependencies>
-		</profile>
-	</profiles>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-dbcp2</artifactId>
+			<version>2.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.7.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml</groupId>
+			<artifactId>jackson-module-scala</artifactId>
+			<version>1.9.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.json4s</groupId>
+			<artifactId>json4s-native_2.11</artifactId>
+			<version>3.2.11</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.json4s</groupId>
+			<artifactId>json4s-jackson_2.11</artifactId>
+			<version>3.2.11</version>
+		</dependency>
+		<dependency>
+			<groupId>com.databricks</groupId>
+			<artifactId>spark-csv_2.10</artifactId>
+			<version>1.3.0</version>
+		</dependency>
+
+	</dependencies>
 	<build>
-		<sourceDirectory>src/main/scala</sourceDirectory>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.1</version>
 				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
+					<source>1.7</source>
+					<target>1.7</target>
 				</configuration>
 			</plugin>
+
 			<plugin>
-				<groupId>net.alchim31.maven</groupId>
-				<artifactId>scala-maven-plugin</artifactId>
-				<version>3.1.6</version>
+				<groupId>org.scala-tools</groupId>
+				<artifactId>maven-scala-plugin</artifactId>
+				<version>2.15.2</version>
 				<executions>
+					<!-- Run scala compiler in the process-resources phase, so that dependencies 
+						on scala classes can be resolved later in the (Java) compile phase -->
 					<execution>
+						<id>scala-compile-first</id>
+						<phase>process-resources</phase>
 						<goals>
 							<goal>compile</goal>
 						</goals>
 					</execution>
+
+					<!-- Run scala compiler in the process-test-resources phase, so that 
+						dependencies on scala classes can be resolved later in the (Java) test-compile 
+						phase -->
+					<execution>
+						<id>scala-test-compile</id>
+						<phase>process-test-resources</phase>
+						<goals>
+							<goal>testCompile</goal>
+						</goals>
+					</execution>
 				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<executions>
+					<!-- Add src/main/scala to source path of Eclipse -->
+					<execution>
+						<id>add-source</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>add-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>src/main/scala</source>
+								<source>src/test/scala</source>
+							</sources>
+						</configuration>
+					</execution>
+
+					<!-- Add src/test/scala to test source path of Eclipse -->
+					<execution>
+						<id>add-test-source</id>
+						<phase>generate-test-sources</phase>
+						<goals>
+							<goal>add-test-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>src/test/scala</source>
+							</sources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- to generate Eclipse artifacts for projects mixing Scala and Java -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.8</version>
 				<configuration>
-					<args>
-						<arg>-nobootcp</arg>
-					</args>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>true</downloadJavadocs>
+					<projectnatures>
+						<projectnature>org.scala-ide.sdt.core.scalanature</projectnature>
+						<projectnature>org.eclipse.jdt.core.javanature</projectnature>
+					</projectnatures>
+					<buildcommands>
+						<buildcommand>org.scala-ide.sdt.core.scalabuilder</buildcommand>
+					</buildcommands>
+					<classpathContainers>
+						<classpathContainer>org.scala-ide.sdt.launching.SCALA_CONTAINER</classpathContainer>
+						<classpathContainer>org.eclipse.jdt.launching.JRE_CONTAINER</classpathContainer>
+					</classpathContainers>
+					<excludes>
+						<!-- in Eclipse, use scala-library, scala-compiler from the SCALA_CONTAINER 
+							rather than POM <dependency> -->
+						<exclude>org.scala-lang:scala-library</exclude>
+						<exclude>org.scala-lang:scala-compiler</exclude>
+					</excludes>
+					<sourceIncludes>
+						<sourceInclude>**/*.scala</sourceInclude>
+						<sourceInclude>**/*.java</sourceInclude>
+					</sourceIncludes>
 				</configuration>
 			</plugin>
+
 			<!-- This will generate a fat jar, added as a work around for spark-cassandra-connector -->
-			<!-- <plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-shade-plugin</artifactId>
 				<version>2.4.3</version>
@@ -156,8 +285,7 @@
 						</configuration>
 					</execution>
 				</executions>
-			</plugin> -->
+			</plugin>
 		</plugins>
 	</build>
-
 </project>

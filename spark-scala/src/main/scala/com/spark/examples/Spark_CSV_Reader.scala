@@ -2,6 +2,7 @@ package com.spark.examples
 import org.apache.spark.SparkConf
 import org.apache.spark.SparkContext
 import org.apache.spark.sql.functions._
+import com.spark.util._
 object Spark_CSV_Reader {
   def main(args: Array[String]) {
     val conf = new SparkConf().setAppName("Spark-CSV-Example").setMaster("local[1]")
@@ -11,7 +12,7 @@ object Spark_CSV_Reader {
       .format("com.databricks.spark.csv")
       .option("header", "true") // Use first line of all files as header
       .option("inferSchema", "true") // Automatically infer data types
-      .load("F:/Software/Spark/data/ebay.csv")
+      .load(Utills.DATA_PATH +"ebay.csv")
     //auctionDF.printSchema()
     //auctionDF.select("auctionid", "bidder").show
 
