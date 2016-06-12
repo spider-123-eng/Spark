@@ -11,7 +11,7 @@ object Spark_Hive {
     val hiveContext = new org.apache.spark.sql.hive.HiveContext(sc)
 
     //Create Table and load data 
-    hiveContext.sql("CREATE TABLE IF NOT EXISTS users(id INT, name STRING, age INT) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n'")
+    hiveContext.sql("CREATE EXTERNAL TABLE IF NOT EXISTS users(id INT, name STRING, age INT) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n'")
     hiveContext.sql("LOAD DATA LOCAL INPATH '/hdp/dev/hive/users.txt' INTO TABLE users") //specify path to file accordingly
     
     val result = hiveContext.sql("FROM users SELECT id, name, age").show()
