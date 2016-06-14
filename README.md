@@ -10,9 +10,9 @@ Spark Kafka Integration.
 Spark Streaming with Kafka.     
 Storing the Spark Streaming data in to HDFS.      
 Storing the Spark Streaming data in to Cassandra.       
-Spark DataFrames API.     
+Spark DataFrames API (Joining 2 data frames,sorting,wild card search,orderBy,Aggregations).         
 Spark SQL.      
-Spark Hive Context.     
+Spark Hive Context (Loading ORC,txt,parquet data from Hive table ).     
 Kafka Producer.     
 Kafka Consumer by Spark integration with Kafka.     
 Spark File Streaming.     
