@@ -33,7 +33,7 @@ object DataFrame_Joins {
       Dept(3, "SALES", "AP")))
 
     //converting employee object to Data Frame.
-    val empDF = emp.map(x => Employee(x.empId, x.empName, x.deptId, x.salary, x.location)).toDF()
+    val empDF = emp.map(x => Employee(x.empId, x.empName, x.deptId, x.salary, x.location)).toDF().cache()
 
     //converting department object to Data Frame.
     val deptDF = dept.map(x => Dept(x.deptId, x.deptName, x.location)).toDF()
@@ -61,5 +61,13 @@ object DataFrame_Joins {
     empDF.registerTempTable("emp")
     sqlContext.sql("select * from emp where empName like '%Hari' ").show()
 
+    //sorting ,orderBy on Data Frames
+    empDF.sort($"salary".asc).show()
+    empDF.sort($"salary".desc).show()
+    empDF.orderBy("empName").show() // ascending
+    empDF.orderBy($"empName".desc).show()
+
+    //dropping a column from the data frame 
+    empDF.drop("empName").show()
   }
 }
