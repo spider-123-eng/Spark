@@ -31,8 +31,8 @@ Analysing different kinds of data sets and solving the problem statements.
 This document is prepared based on the following BigData Stack.    
 ---------------------------------------------------------------
 HDP 2.4           
-Spark 1.6.0       
-Scala 2.10.5        
+Spark 1.5.2          
+Scala 2.10.4             
 HDFS 2.7             
 Kafka 0.9              
 Hive 1.2                        
