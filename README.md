@@ -5,8 +5,8 @@ Topics Covered :
 ----------------
 Spark Transformations.   
 Spark To Cassandra connection and storage.       
-Spark To Cassandra CRUD operations. 
-Reading data from Cassandra using spark streaming(Cassandra as source).     
+Spark To Cassandra CRUD operations.              
+Reading data from Cassandra using spark streaming(Cassandra as source).                
 Spark Kafka Integration.       
 Spark Streaming with Kafka.     
 Storing the Spark Streaming data in to HDFS.      
