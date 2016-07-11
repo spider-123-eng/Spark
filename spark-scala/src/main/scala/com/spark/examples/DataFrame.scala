@@ -26,7 +26,10 @@ object DataFrame {
       map(p => Employee(p(0).trim.toInt, p(1), p(2), p(3).trim.toInt, p(4).trim.toInt)).toDF()
 
     empDF.show()
-
+    /*val whereCond = "dept = 'DPE' and salary > 1000 or dept = 'MGF' and salary > 5000"
+    val res = empDF.select("empid", "name", "salary", "dept").where(whereCond)
+    res.show()*/
+    
     //Spark Aggregations 
     val aggDF = empDF.groupBy("empid", "name", "dept").
       agg(sum(empDF.col("salary")), sum(empDF.col("nop")), max(empDF.col("salary")))
