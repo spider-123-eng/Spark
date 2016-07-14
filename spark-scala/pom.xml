@@ -143,7 +143,23 @@
 			<artifactId>spark-csv_2.10</artifactId>
 			<version>1.3.0</version>
 		</dependency>
-
+		
+		<!-- mongodb -->
+		<dependency>
+			<groupId>org.mongodb.mongo-hadoop</groupId>
+			<artifactId>mongo-hadoop-core</artifactId>
+			<version>1.5.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongodb-driver</artifactId>
+			<version>3.2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongo-java-driver</artifactId>
+			<version>3.2.2</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
