@@ -1,4 +1,4 @@
-package com.spark.examples
+package com.spark.cassandra
 
 import scala.reflect.runtime.universe
 import org.apache.spark.SparkConf

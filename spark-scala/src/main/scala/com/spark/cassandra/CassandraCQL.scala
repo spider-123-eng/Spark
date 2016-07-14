@@ -1,4 +1,4 @@
-package com.spark.examples
+package com.spark.cassandra
 import org.apache.spark.{ SparkContext, SparkConf }
 import com.datastax.spark.connector._
 import org.apache.spark._

@@ -1,4 +1,4 @@
-package com.spark.examples
+package com.spark.cassandra
 import org.apache.spark._
 import org.apache.spark.streaming._
 import com.datastax.spark.connector.streaming._
