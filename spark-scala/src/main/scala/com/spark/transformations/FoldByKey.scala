@@ -1,7 +1,8 @@
-package com.spark.transformations.examples
+package com.spark.transformations
 
 import org.apache.spark.SparkConf
 import org.apache.spark.SparkContext
+import org.apache.spark.rdd.RDD.rddToPairRDDFunctions
 object FoldByKey {
   def main(args: Array[String]) {
     val conf = new SparkConf().setAppName("FoldByKey-Example").setMaster("local[1]")

@@ -1,4 +1,4 @@
-package com.spark.transformations.examples
+package com.spark.transformations
 import org.apache.spark.SparkConf
 import org.apache.spark.SparkContext
 object Reduce {

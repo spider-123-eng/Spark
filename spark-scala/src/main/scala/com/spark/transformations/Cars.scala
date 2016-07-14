@@ -1,7 +1,8 @@
-package com.spark.transformations.examples
+package com.spark.transformations
 import org.apache.spark.SparkConf
 import org.apache.spark.SparkContext
 import com.spark.util._
+import org.apache.spark.rdd.RDD.rddToPairRDDFunctions
 object Cars {
   def main(args: Array[String]) {
     case class cars(make: String, model: String, mpg: String, cylinders: Integer, engine_disp: Integer, horsepower: Integer, weight: Integer, accelerate: Double, year: Integer, origin: String)

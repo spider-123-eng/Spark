@@ -1,10 +1,12 @@
-package com.spark.transformations.examples
+package com.spark.transformations
 import org.apache.spark.SparkConf
 import org.apache.spark.SparkContext
+import org.apache.spark.rdd.RDD.rddToOrderedRDDFunctions
+import org.apache.spark.rdd.RDD.rddToPairRDDFunctions
 object Cogroup {
 
   def main(args: Array[String]) {
-    val conf = new SparkConf().setAppName("AggregateByKey-Example").setMaster("local[1]")
+    val conf = new SparkConf().setAppName("Transformations-Example").setMaster("local[1]")
     val sc = new SparkContext(conf)
 
     //  cartesian

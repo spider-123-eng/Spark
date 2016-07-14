@@ -1,7 +1,6 @@
-package com.spark.transformations.examples
+package com.spark.transformations
 import org.apache.spark.SparkConf
 import org.apache.spark.SparkContext
-import java.util.{ Date, TimeZone }
 object Filter {
   def main(args: Array[String]) {
     val conf = new SparkConf().setAppName("Spark Filter Example").setMaster("local[1]")

@@ -1,6 +1,7 @@
-package com.spark.transformations.examples
+package com.spark.transformations
 import org.apache.spark.SparkConf
 import org.apache.spark.SparkContext
+import org.apache.spark.rdd.RDD.rddToPairRDDFunctions
 object GroupBY_ReduceBY {
   def main(args: Array[String]) {
     val conf = new SparkConf().setAppName("Spark-GroupBY-ReduceBY-Example").setMaster("local[1]")
