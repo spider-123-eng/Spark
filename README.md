@@ -22,8 +22,8 @@ Scala Case Class limitations overcoming by using Struct Type.
 Reading CSV,Json,ORC,Parquet data files in Spark.     
 Spark Joins.      
 Spark Aggregations using DataFrame API.     
-Storing data as text,parquet file in to HDFS. 
-
+Storing data as text,parquet file in to HDFS.     
+Integrating Spark with Mangodb.             
 Spark Use cases :
 ----------------
 Analysing different kinds of data sets and solving the problem statements.  
