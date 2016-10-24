@@ -17,7 +17,7 @@ object ReadMultipleFiles {
 
     val empDataRDD = sc.textFile("E:/employee/*").coalesce(1, false)
 
-    val filteredRDD = empDataRDD.filter(line => !line.contains("empid"))
+    val filteredRDD = empDataRDD.filter(line => !line.contains("empid")) //removing the header section
 
     val empDF = filteredRDD.filter { lines => lines.length() > 0 }.
       map(_.split("\\|")).
