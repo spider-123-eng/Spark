@@ -1,4 +1,4 @@
-package com.spark
+package com.spark.examples
 
 import org.apache.spark.SparkConf
 import org.apache.spark.SparkContext
