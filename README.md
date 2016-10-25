@@ -17,6 +17,7 @@ Spark Hive Context (Loading ORC,txt,parquet data from Hive table ).
 Kafka Producer.     
 Kafka Consumer by Spark integration with Kafka.     
 Spark File Streaming.     
+Spark Socket Streaming.     
 Spark JDBC Connection.      
 Scala Case Class limitations overcoming by using Struct Type.     
 Reading CSV,Json,XML,ORC,Parquet data files in Spark.     
