@@ -19,8 +19,9 @@ Kafka Consumer by Spark integration with Kafka.
 Spark File Streaming.     
 Spark JDBC Connection.      
 Scala Case Class limitations overcoming by using Struct Type.     
-Reading CSV,Json,ORC,Parquet data files in Spark.     
+Reading CSV,Json,XML,ORC,Parquet data files in Spark.     
 Spark Joins.      
+Spark Window vs Sliding Interval.                            
 Spark Aggregations using DataFrame API.     
 Storing data as text,parquet file in to HDFS.     
 Integrating Spark with Mangodb.             
