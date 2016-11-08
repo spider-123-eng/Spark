@@ -1,0 +1,11 @@
+venkat
+1000
+suman
+2000
+sachin
+3000
+senthil
+4000
+revanth
+hari
+ganesh
