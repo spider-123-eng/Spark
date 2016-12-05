@@ -90,6 +90,7 @@ Start and Login to Cassandra :::
 >>use spark_kafka_cassandra ;                             
 >>CREATE TABLE IF NOT EXISTS spark_kafka_cassandra.employee (id int PRIMARY KEY,name VARCHAR, salary int);                
 
+References : https://docs.datastax.com/en/cql/3.1/cql/cql_using/about_cql_c.html
 ------------------------------------------------------------------------------------------------------------------------------------     
 
 You can reach me for any suggestions/clarifications on  : revanthkumar95@gmail.com                                              
