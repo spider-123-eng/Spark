@@ -91,6 +91,8 @@ Start and Login to Cassandra :::
 >>CREATE TABLE IF NOT EXISTS spark_kafka_cassandra.employee (id int PRIMARY KEY,name VARCHAR, salary int);                
 
 Reference : https://docs.datastax.com/en/cql/3.1/cql/cql_using/about_cql_c.html
+Install and setup Apache Cassandra Single Node cluster   :                                     http://www.techburps.com/cassandra/cassandra-single-node-cluster/59/                                                    
+Install and setup Apache Cassandra Multiple Node cluster :                                     http://www.techburps.com/cassandra/cassandra-multiple-node-cluster/60/
 
 ------------------------------------------------------------------------------------------------------------------------------------     
 
