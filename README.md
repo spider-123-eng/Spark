@@ -3,7 +3,8 @@ This project contains programs for Spark in Scala launguage .
 
 Topics Covered :     
 ----------------
-Spark Transformations.   
+
+  Spark Transformations.   
 Spark To Cassandra connection and storage.       
 Spark To Cassandra CRUD operations.              
 Reading data from Cassandra using spark streaming(Cassandra as source).                
@@ -26,6 +27,7 @@ Spark Window vs Sliding Interval.
 Spark Aggregations using DataFrame API.     
 Storing data as text,parquet file in to HDFS.     
 Integrating Spark with Mangodb.             
+
 Spark Use cases :
 ----------------
 Analysing different kinds of data sets and solving the problem statements.  
