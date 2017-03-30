@@ -111,7 +111,7 @@ Understanding How Cassandra Stores Data :
 https://www.hakkalabs.co/articles/how-cassandra-stores-data                                           
 
 Significance of Vnodes in Cassandra:                                           
-http://stackoverflow.com/questions/25379457/what-is-virtual-nodes-and-how-it-is-helping-during-partitioning-in-casssandra
+http://stackoverflow.com/questions/25379457/what-is-virtual-nodes-and-how-it-is-helping-during-partitioning-in-casssandra           
 http://stackoverflow.com/questions/38423888/significance-of-vnodes-in-cassandra                                                      
 http://www.datastax.com/dev/blog/virtual-nodes-in-cassandra-1-2                                            
 
