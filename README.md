@@ -94,7 +94,9 @@ See also for Reference :
 ------------------------
 Cassandra Installation on Windows:                                         
 http://cassandra.apache.org/                                                
-http://www.luketillman.com/developing-with-cassandra-on-windows/                                                
+http://www.luketillman.com/developing-with-cassandra-on-windows/        
+
+Configuring data consistency :                    
 http://docs.datastax.com/en/archived/cassandra/2.0/cassandra/dml/dml_config_consistency_c.html                                          
 
 Using Cassandra CQL :                                                 
