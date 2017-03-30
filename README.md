@@ -90,59 +90,44 @@ Start and Login to Cassandra :::
 >>use spark_kafka_cassandra ;                             
 >>CREATE TABLE IF NOT EXISTS spark_kafka_cassandra.employee (id int PRIMARY KEY,name VARCHAR, salary int);                
 
-See also for Reference :                                  
+See also for Reference :      
+------------------------
 Cassandra Installation on Windows:                                         
 http://cassandra.apache.org/                                                
-
 http://www.luketillman.com/developing-with-cassandra-on-windows/                                                
-
 http://docs.datastax.com/en/archived/cassandra/2.0/cassandra/dml/dml_config_consistency_c.html                                          
 
 Using Cassandra CQL :                                                 
-
 https://docs.datastax.com/en/cql/3.1/cql/cql_using/about_cql_c.html                                                
 
 Node calculator :                                                
-
 https://www.ecyrd.com/cassandracalculator/                                                
 
 Cassandra Partitioning & Clustering Keys Explained :                                                
-
 http://datascale.io/cassandra-partitioning-and-clustering-keys-explained/                                                
-
 https://www.datastax.com/dev/blog/the-most-important-thing-to-know-in-cassandra-data-modeling-the-primary-key            
 
 Understanding How Cassandra Stores Data :                                            
-
 https://www.hakkalabs.co/articles/how-cassandra-stores-data                                           
 
-
 Significance of Vnodes in Cassandra:                                           
-
 http://stackoverflow.com/questions/25379457/what-is-virtual-nodes-and-how-it-is-helping-during-partitioning-in-casssandra
-
 http://stackoverflow.com/questions/38423888/significance-of-vnodes-in-cassandra                                                      
-
 http://www.datastax.com/dev/blog/virtual-nodes-in-cassandra-1-2                                            
 
 Accessing Cassandra from Spark in Java:                                                 
 http://www.datastax.com/dev/blog/accessing-cassandra-from-spark-in-java                                                
 
 Cassandra-Spark-Demo Project :
-
 https://github.com/doanduyhai/Cassandra-Spark-Demo                                                 
 
-
- DataStax course  on  Apache Cassandra /spark :                                                
-
+DataStax course  on  Apache Cassandra /spark :                                                
 https://academy.datastax.com/resources/ds201-foundations-apache-cassandra                                                 
-
 https://academy.datastax.com/resources/getting-started-apache-spark                                                 
                                        
+Install and setup Apache Cassandra Single Node cluster   :                                                                                http://www.techburps.com/cassandra/cassandra-single-node-cluster/59/         
 
-Install and setup Apache Cassandra Single Node cluster   :                                     http://www.techburps.com/cassandra/cassandra-single-node-cluster/59/         
-
-Install and setup Apache Cassandra Multiple Node cluster :                                     http://www.techburps.com/cassandra/cassandra-multiple-node-cluster/60/
+Install and setup Apache Cassandra Multiple Node cluster :                                                               http://www.techburps.com/cassandra/cassandra-multiple-node-cluster/60/
 
 ------------------------------------------------------------------------------------------------------------------------------------     
 
