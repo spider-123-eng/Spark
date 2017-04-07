@@ -23,7 +23,8 @@ Spark File Streaming.
 Spark Socket Streaming.     
 Spark JDBC Connection.      
 Scala Case Class limitations overcoming by using Struct Type.     
-Reading CSV,Json,XML,ORC,Parquet data files in Spark.     
+Working with CSV,Json,XML,ORC,Parquet data files in Spark.     
+Working with Avro,SequenceFiles in Spark.                    
 Spark Joins.      
 Spark Window vs Sliding Interval.                            
 Spark Aggregations using DataFrame API.   
