@@ -26,7 +26,8 @@ Scala Case Class limitations overcoming by using Struct Type.
 Reading CSV,Json,XML,ORC,Parquet data files in Spark.     
 Spark Joins.      
 Spark Window vs Sliding Interval.                            
-Spark Aggregations using DataFrame API.     
+Spark Aggregations using DataFrame API.   
+Writing a Custom UDF,UDAF in Spark.                 
 Storing data as text,parquet file in to HDFS.     
 Integrating Spark with Mangodb.             
 
