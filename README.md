@@ -51,7 +51,7 @@ Cassandra 2.2.1
 
 Sample Spark Submit commands for the programs in this blog :             
 
-spark-submit --class com.spark.transformations.examples.Filter --master local[2] /hdp/dev/lib/spark-scala-1.0.jar  
+spark-submit --class com.spark.transformations.Filter --master local[2] /hdp/dev/lib/spark-scala-1.0.jar  
 
 spark-submit --class com.spark.examples.KafkaProducer --master local[2] /hdp/dev/lib/spark-scala-1.0.jar 192.168.19.130:6667 test  
 
