@@ -2,9 +2,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.spark.scala</groupId>
-	<artifactId>spark-scala</artifactId>
+	<artifactId>spark-1.5</artifactId>
 	<version>1.0</version>
-	<name>Spark Scala Demo Application</name>
+	<name>Spark-1.5 Scala Demo Application</name>
 	<url>http://maven.apache.org</url>
 	<repositories>
 		<repository>
