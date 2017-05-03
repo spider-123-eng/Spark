@@ -7,4 +7,8 @@ Implementing custom UDF,UDAF,Partitioner using Spark-2.1
 Working with DataFrames (ComplexSchema,DropDuplicates,DatasetConversion,GroupingAndAggregation)               
 Working with DataSets                                     
 Working with Parquet files                                        
-Working with Spark Catalog API to access Hive tables                         
+Working with Spark Catalog API to access Hive tables      
+
+#Pushing Spark Accumulator Values as metrics to DataDog API      
+https://github.com/Re1tReddy/Spark/tree/master/Spark-2.1/src/main/scala/com/datadog/metrics
+
