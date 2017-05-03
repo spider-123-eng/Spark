@@ -3,8 +3,8 @@ Apache Spark is a fast, in-memory data processing engine with elegant and expres
 
 This project contains programs for Spark in Scala launguage .
 
-Topics Covered :     
-----------------
+Topics Covered Spark 1.5:     
+------------------------
 
   Spark Transformations.   
 Spark To Cassandra connection and storage.       
@@ -32,110 +32,15 @@ Writing a Custom UDF,UDAF in Spark.
 Storing data as text,parquet file in to HDFS.     
 Integrating Spark with Mangodb.             
 
-Spark Use cases :
-----------------
-Analysing different kinds of data sets and solving the problem statements.  
-
-  
-This document is prepared based on the following BigData Stack.    
----------------------------------------------------------------
-HDP 2.4           
-Spark 1.5.2          
-Scala 2.10.4             
-HDFS 2.7             
-Kafka 0.9              
-Hive 1.2                        
-Cassandra 2.2.1                      
-
-------------------------------------------------------------------------------------------------------------------------------------- 
-
-Sample Spark Submit commands for the programs in this blog :             
-
-spark-submit --class com.spark.transformations.Filter --master local[2] /hdp/dev/lib/spark-scala-1.0.jar  
-
-spark-submit --class com.spark.examples.KafkaProducer --master local[2] /hdp/dev/lib/spark-scala-1.0.jar 192.168.19.130:6667 test  
-
-spark-submit --class com.spark.examples.KafkaConsumer --master local[2] /hdp/dev/lib/spark-scala-1.0.jar 192.168.19.130:6667 test
-
-spark-submit --class com.spark.usecases.NamesAnalysis --master local[2] /hdp/dev/lib/spark-scala-1.0.jar            
-
-spark-submit --class com.spark.usecases.OlaDataAnalysis --master local[2] /hdp/dev/lib/spark-scala-1.0.jar        
-
-spark-submit --class com.spark.examples.KafkaConsumerToCassandra --master local[2] /hdp/dev/lib/spark-scala-1.0.jar 192.168.19.130:6667 test                                      
-
-spark-submit --class com.spark.examples.KafkaConsumerToHDFS --master local[2] /hdp/dev/lib/spark-scala-1.0.jar 192.168.19.130:6667 test                         
-
-
---------------------------------------------------------------------------------------------------------------------------------------
-Kafka commands ::::
-
-cd /usr/hdp/current/kafka-broker/                 
-Create a topic:                          
-bin/kafka-topics.sh --create --zookeeper 192.168.19.130:2181 --replication-factor 1 --partitions 1 --topic test              
-bin/kafka-topics.sh --zookeeper 192.168.19.130:2181 --list                    
-Send some messages:               
-bin/kafka-console-producer.sh --broker-list 192.168.19.130:6667 --topic test                       
-Start a consumer:                    
-bin/kafka-console-consumer.sh --zookeeper 192.168.19.130:2181 --topic test --from-beginning                
-
---------------------------------------------------------------------------------------------------------------------------------------
-Cassandra installation :::     
-curl -L http://downloads.datastax.com/community/dsc-cassandra-2.2.1-bin.tar.gz | tar xz   
-
-Add Cassandra path as below :::    
-sudo vi .bashrc             
-export CASSANDRA_HOME=/hdp/dev/dsc-cassandra-2.2.1                   
-export PATH=$CASSANDRA_HOME/bin:$PATH                      
-source .bashrc                 
-
-Start and Login to Cassandra :::             
->>cassandra -f                                       
->>cqlsh                                 
-
->>CREATE KEYSPACE IF NOT EXISTS spark_kafka_cassandra WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 1 };     
->>use spark_kafka_cassandra ;                             
->>CREATE TABLE IF NOT EXISTS spark_kafka_cassandra.employee (id int PRIMARY KEY,name VARCHAR, salary int);                
-
-See also for Reference :      
+Topics Covered Spark 2.1:     
 ------------------------
-Cassandra Installation on Windows:                                         
-http://cassandra.apache.org/                                                
-http://www.luketillman.com/developing-with-cassandra-on-windows/        
+Implementing custom UDF,UDAF,Partitioner using Spark-2.1                
+Working with DataFrames (ComplexSchema,DropDuplicates,DatasetConversion,GroupingAndAggregation)               
+Working with DataSets                                     
+Working with Parquet files                                        
+Working with Spark Catalog API to access Hive tables      
 
-Configuring data consistency :                    
-http://docs.datastax.com/en/archived/cassandra/2.0/cassandra/dml/dml_config_consistency_c.html                                          
-
-Using Cassandra CQL :                                                 
-https://docs.datastax.com/en/cql/3.1/cql/cql_using/about_cql_c.html                                                
-
-Node calculator :                                                
-https://www.ecyrd.com/cassandracalculator/                                                
-
-Cassandra Partitioning & Clustering Keys Explained :                                                
-http://datascale.io/cassandra-partitioning-and-clustering-keys-explained/                                                
-https://www.datastax.com/dev/blog/the-most-important-thing-to-know-in-cassandra-data-modeling-the-primary-key            
-
-Understanding How Cassandra Stores Data :                                            
-https://www.hakkalabs.co/articles/how-cassandra-stores-data                                           
-
-Significance of Vnodes in Cassandra:                                           
-http://stackoverflow.com/questions/25379457/what-is-virtual-nodes-and-how-it-is-helping-during-partitioning-in-casssandra           
-http://stackoverflow.com/questions/38423888/significance-of-vnodes-in-cassandra                                                      
-http://www.datastax.com/dev/blog/virtual-nodes-in-cassandra-1-2                                            
-
-Accessing Cassandra from Spark in Java:                                                 
-http://www.datastax.com/dev/blog/accessing-cassandra-from-spark-in-java                                                
-
-Cassandra-Spark-Demo Project :
-https://github.com/doanduyhai/Cassandra-Spark-Demo                                                 
-
-DataStax course  on  Apache Cassandra /spark :                                                
-https://academy.datastax.com/resources/ds201-foundations-apache-cassandra                                                 
-https://academy.datastax.com/resources/getting-started-apache-spark                                                 
-                                       
-Install and setup Apache Cassandra Single Node cluster   :                                                                                http://www.techburps.com/cassandra/cassandra-single-node-cluster/59/         
-
-Install and setup Apache Cassandra Multiple Node cluster :                                                               http://www.techburps.com/cassandra/cassandra-multiple-node-cluster/60/
+<a href="https://github.com/Re1tReddy/Spark/tree/master/Spark-2.1/src/main/scala/com/datadog/metrics">Pushing Spark Accumulator Values as metrics to DataDog API</a>  
 
 ------------------------------------------------------------------------------------------------------------------------------------     
 
