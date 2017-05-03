@@ -3,9 +3,9 @@ package com.datadog.metrics
 import org.json4s.jackson.Serialization.write
 import org.slf4j.LoggerFactory
 
-import com.rasa.metrics.CaseClasses.Event
-import com.rasa.metrics.CaseClasses.Series
-import com.rasa.metrics.CaseClasses.SeriesList
+import com.datadog.metrics.CaseClasses.Event
+import com.datadog.metrics.CaseClasses.Series
+import com.datadog.metrics.CaseClasses.SeriesList
 /**
  * @author revanthreddy
  */
@@ -14,11 +14,11 @@ class DataDogCollector(apikey: String, env: String) extends MetricsCollector {
   protected val logger = LoggerFactory.getLogger(getClass)
 
   //initializing the DataDog HttpTransporter
-  val metricsHttpTransport = new DataDogHttpTransport(apikey, 5000, 5000, null, true)
+  val metricsHttpTransport = new DataDogHttpTransport(apikey, 1, 1, null, true)
   val eventsHttpTransport = new DataDogHttpTransport(apikey, 5000, 5000, null, false)
 
   //max retry count if httpTransport connection fails
-  var max_re_tyries = 3
+  val max_re_tyries = 3
 
   /**
    * This method is used to construct DataDog metrics.
@@ -84,7 +84,7 @@ class DataDogCollector(apikey: String, env: String) extends MetricsCollector {
     } catch {
       case ex: org.apache.http.conn.HttpHostConnectException =>
         logger.error("Error in DataDogCollector.pushMetricsToDataDog()" + ex)
-        httpTransportConnectionRetry(jsonOutString, metricsHttpTransport)
+        httpTransportConnectionRetry(jsonOutString, metricsHttpTransport, max_re_tyries)
 
     }
   }
@@ -102,7 +102,7 @@ class DataDogCollector(apikey: String, env: String) extends MetricsCollector {
       } catch {
         case ex: org.apache.http.conn.HttpHostConnectException =>
           logger.error("Error in DataDogCollector.pushMetricsToDataDog()" + ex)
-          httpTransportConnectionRetry(jsonOutString, eventsHttpTransport)
+          httpTransportConnectionRetry(jsonOutString, eventsHttpTransport, max_re_tyries)
       }
     }
   }
@@ -111,10 +111,10 @@ class DataDogCollector(apikey: String, env: String) extends MetricsCollector {
    * This method is used to re-establish the DataDog-HttpTransport connection if connection
    * exception occurs.
    */
-  def httpTransportConnectionRetry(jsonOutString: String, httpTransport: DataDogHttpTransport) {
+  def httpTransportConnectionRetry(jsonOutString: String, httpTransport: DataDogHttpTransport, retry_count: Int) {
+
     try {
-      while (max_re_tyries != 0) {
-        max_re_tyries -= 1
+      while (retry_count != 0) {
         val httpResponseCode = httpTransport.send(jsonOutString)
         logger.info("httpResponseCode :" + httpResponseCode)
         if (httpResponseCode == 202) {
@@ -125,7 +125,7 @@ class DataDogCollector(apikey: String, env: String) extends MetricsCollector {
     } catch {
       case ex: org.apache.http.conn.HttpHostConnectException =>
         logger.error("Error in DataDogCollector.httpTransportConnectionRetry()" + ex)
-        httpTransportConnectionRetry(jsonOutString, httpTransport)
+        httpTransportConnectionRetry(jsonOutString, httpTransport, retry_count - 1)
 
     }
   }
