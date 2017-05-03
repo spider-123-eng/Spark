@@ -3,8 +3,8 @@ Apache Spark is a fast, in-memory data processing engine with elegant and expres
 
 This project contains programs for Spark in Scala launguage .
 
-Topics Covered Spark 1.5:     
-------------------------
+Topics Covered in Spark 1.5     
+---------------------------
 
   Spark Transformations.   
 Spark To Cassandra connection and storage.       
@@ -32,8 +32,8 @@ Writing a Custom UDF,UDAF in Spark.
 Storing data as text,parquet file in to HDFS.     
 Integrating Spark with Mangodb.             
 
-Topics Covered Spark 2.1:     
-------------------------
+Topics Covered in Spark 2.1     
+---------------------------
 Implementing custom UDF,UDAF,Partitioner using Spark-2.1                
 Working with DataFrames (ComplexSchema,DropDuplicates,DatasetConversion,GroupingAndAggregation)               
 Working with DataSets                                     
