@@ -12,3 +12,9 @@ Working with Spark Catalog API to access Hive tables
 <a href="https://github.com/Re1tReddy/Spark/tree/master/Spark-2.1/src/main/scala/com/datadog/metrics">Pushing Spark Accumulator Values as metrics to DataDog API</a>      
 
 
+
+------------------------------------------------------------------------------------------------------------------------------------     
+
+You can reach me for any suggestions/clarifications on  : revanthkumar95@gmail.com                                              
+Feel free to share any insights or constructive criticism. Cheers!!                                                           
+#Happy Sparking!!!..  
