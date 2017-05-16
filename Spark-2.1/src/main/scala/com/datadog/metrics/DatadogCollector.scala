@@ -14,7 +14,7 @@ class DataDogCollector(apikey: String, env: String) extends MetricsCollector {
   protected val logger = LoggerFactory.getLogger(getClass)
 
   //initializing the DataDog HttpTransporter
-  val metricsHttpTransport = new DataDogHttpTransport(apikey, 1, 1, null, true)
+  val metricsHttpTransport = new DataDogHttpTransport(apikey, 5000, 5000, null, true)
   val eventsHttpTransport = new DataDogHttpTransport(apikey, 5000, 5000, null, false)
 
   //max retry count if httpTransport connection fails
