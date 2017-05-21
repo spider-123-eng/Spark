@@ -38,7 +38,7 @@ Implementing custom UDF,UDAF,Partitioner using Spark-2.1
 Working with DataFrames (ComplexSchema,DropDuplicates,DatasetConversion,GroupingAndAggregation)               
 Working with DataSets                                     
 Working with Parquet files                                        
-Working with Spark Catalog API to access Hive tables 
+Working with Spark Catalog API to access Hive tables                          
 Inserting data in to Hive table (Managed,External) from Spark           
 Inserting data in to Hive Partitioned table as Parquet format (Managed,External) from Spark               
 
