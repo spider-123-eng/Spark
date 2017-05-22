@@ -42,7 +42,7 @@ Loading Data from Cassnadra table using Spark
 Working with Spark Catalog API to access Hive tables                          
 Inserting data in to Hive table (Managed,External) from Spark           
 Inserting data in to Hive Partitioned table as Parquet format (Managed,External) from Spark               
-
+Adding,Listing Partitions to Hive table using Spark               
 
 <a href="https://github.com/Re1tReddy/Spark/tree/master/Spark-2.1/src/main/scala/com/datadog/metrics">Pushing Spark Accumulator Values as metrics to DataDog API</a>  
 
