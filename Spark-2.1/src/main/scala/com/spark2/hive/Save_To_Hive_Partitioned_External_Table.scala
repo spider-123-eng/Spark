@@ -55,6 +55,13 @@ object Save_To_Hive_Partitioned_External_Table {
 
     // selecting data from a specific partition
     sql("select name,dept,dttime from employee_ext where dttime='07-06-2016-06-08-27'").show()
+	  
+    //To list the partitions of an existing table
+    sql("SHOW PARTITIONS employee_ext").show()
+
+    //If you want to add an PARTITION to the external table for rolling data 
+    sql("ALTER TABLE employee_ext ADD IF NOT EXISTS PARTITION(dttime = '07-06-2016-06-06-02') LOCATION '/user/centos/hive/emp_ext/'")
+
 
   }
 }
