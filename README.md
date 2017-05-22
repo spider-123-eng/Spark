@@ -3,6 +3,22 @@ Apache Spark is a fast, in-memory data processing engine with elegant and expres
 
 This project contains programs for Spark in Scala launguage .
 
+Topics Covered in Spark 2.1     
+---------------------------
+Implementing custom UDF,UDAF,Partitioner using Spark-2.1                
+Working with DataFrames (ComplexSchema,DropDuplicates,DatasetConversion,GroupingAndAggregation)               
+Working with DataSets                                     
+Working with Parquet files                            
+Loading Data from Cassnadra table using Spark             
+Working with Spark Catalog API to access Hive tables                          
+Inserting data in to Hive table (Managed,External) from Spark           
+Inserting data in to Hive Partitioned table as Parquet format (Managed,External) from Spark               
+Adding,Listing Partitions to Hive table using Spark               
+CRUD operations on Cassandra Using Spark                                                 
+Reading/Writing to S3 buckets Using Spark                  
+
+
+
 Topics Covered in Spark 1.5     
 ---------------------------
 
@@ -32,17 +48,6 @@ Writing a Custom UDF,UDAF in Spark.
 Storing data as text,parquet file in to HDFS.     
 Integrating Spark with Mangodb.             
 
-Topics Covered in Spark 2.1     
----------------------------
-Implementing custom UDF,UDAF,Partitioner using Spark-2.1                
-Working with DataFrames (ComplexSchema,DropDuplicates,DatasetConversion,GroupingAndAggregation)               
-Working with DataSets                                     
-Working with Parquet files                            
-Loading Data from Cassnadra table using Spark             
-Working with Spark Catalog API to access Hive tables                          
-Inserting data in to Hive table (Managed,External) from Spark           
-Inserting data in to Hive Partitioned table as Parquet format (Managed,External) from Spark               
-Adding,Listing Partitions to Hive table using Spark               
 
 <a href="https://github.com/Re1tReddy/Spark/tree/master/Spark-2.1/src/main/scala/com/datadog/metrics">Pushing Spark Accumulator Values as metrics to DataDog API</a>  
 
