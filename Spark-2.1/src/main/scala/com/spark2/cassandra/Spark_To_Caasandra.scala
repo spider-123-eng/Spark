@@ -79,5 +79,5 @@ object Spark_To_Caasandra extends App {
     cqlsh:spark_kafka_cassandra> INSERT INTO employee(id,name, salary) VALUES (103,'VeersSiva', 20000);
     cqlsh:spark_kafka_cassandra> INSERT INTO employee(id,name, salary) VALUES (103,'Siva', 20000);
     cqlsh:spark_kafka_cassandra> INSERT INTO employee(id,name, salary) VALUES (104,'VeersSiva', 20000);
-    cqlsh:spark_kafka_cassandra> select * from employee ; */
+    cqlsh:spark_kafka_cassandra> select * from employee ;  */
 }
