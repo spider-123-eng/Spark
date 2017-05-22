@@ -62,4 +62,22 @@ object Spark_To_Caasandra extends App {
   } else {
     println("Records does not exist !")
   }
+  
+  /* cqlsh> CREATE KEYSPACE IF NOT EXISTS dev WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 1 };
+    cqlsh> use dev ;
+    cqlsh:spark_kafka_cassandra> CREATE TABLE IF NOT EXISTS dev.employee (id int PRIMARY KEY,name VARCHAR, salary int);
+    cqlsh:spark_kafka_cassandra> INSERT INTO employee(id,name, salary) VALUES (268988,'venkat', 100);
+    cqlsh:spark_kafka_cassandra> INSERT INTO employee(id,name, salary) VALUES (328561,'revanth', 200);
+    cqlsh:spark_kafka_cassandra> INSERT INTO employee(id,name, salary) VALUES (328562,'reddy', 200);
+    cqlsh:spark_kafka_cassandra> INSERT INTO employee(id,name, salary) VALUES (328563,'Ravireddy', 200);
+    cqlsh:spark_kafka_cassandra> INSERT INTO employee(id,name, salary) VALUES (328564,'RaviKanth', 200);
+    cqlsh:spark_kafka_cassandra> INSERT INTO employee(id,name, salary) VALUES (328565,'Hari', 200);
+    cqlsh:spark_kafka_cassandra> INSERT INTO employee(id,name, salary) VALUES (100,'HariPrasad', 200);
+    cqlsh:spark_kafka_cassandra> INSERT INTO employee(id,name, salary) VALUES (101,'Prasad', 2000);
+    cqlsh:spark_kafka_cassandra> INSERT INTO employee(id,name, salary) VALUES (102,'SivaPrasad', 2000);
+    cqlsh:spark_kafka_cassandra> INSERT INTO employee(id,name, salary) VALUES (103,'Siva', 20000);
+    cqlsh:spark_kafka_cassandra> INSERT INTO employee(id,name, salary) VALUES (103,'VeersSiva', 20000);
+    cqlsh:spark_kafka_cassandra> INSERT INTO employee(id,name, salary) VALUES (103,'Siva', 20000);
+    cqlsh:spark_kafka_cassandra> INSERT INTO employee(id,name, salary) VALUES (104,'VeersSiva', 20000);
+    cqlsh:spark_kafka_cassandra> select * from employee ; */
 }
