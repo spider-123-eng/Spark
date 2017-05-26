@@ -51,7 +51,11 @@ object Save_To_Hive_Partitioned_External_Table {
 
     import spark.sql
 
+    //loading the data from the table 
     sql("SELECT * FROM employee_ext").show()
+    //or
+    val employeeExtDf = spark.read.table("employee_ext")
+    employeeExtDf.show
 
     // selecting data from a specific partition
     sql("select name,dept,dttime from employee_ext where dttime='07-06-2016-06-08-27'").show()
