@@ -37,6 +37,10 @@ object Save_To_Hive {
     //Storing in to hive internal/managed tables
     purchaseDF.coalesce(1).write.mode(SaveMode.Append).insertInto("sales")
 
+    //loading the data from the table 
+    val salesDf = spark.read.table("sales")
+    salesDf.show
+    //or
     sql("SELECT * FROM sales").show()
 
     //Storing in to hive external tables
