@@ -1,6 +1,7 @@
 package com.spark2.examples
 import org.apache.spark.sql.SparkSession
 
+//The problem statement is remove the rows having product_price as null or empty
 object FilterEmpty extends App {
 
   private def checkNullForFloat(value: String): Float = {
@@ -17,7 +18,10 @@ object FilterEmpty extends App {
   val rawRDD = session.sparkContext.textFile("input/product")
 
   val dummyRDD = rawRDD.map(_.split("\\,")).map(p => (p(0).toInt, p(1)toInt, p(2), p(3), p(4), p(5)))
-  dummyRDD.filter(x => (x._5 != null) && (x._5.length > 0)).toDF().sort($"product_price".desc).show()
+  val filteredRDD = dummyRDD.filter(x => (x._5 != null) && (x._5.length > 0))
+  
+  filteredRDD.map(f => Product(f._1, f._2, f._3, f._4, f._5.toFloat, f._6)).toDF()
+    .sort($"product_price".desc).show()
 
   //OR
   val prodRDD = rawRDD.map(_.split("\\,")).map(p => Product(p(0).toInt, p(1)toInt, p(2), p(3), checkNullForFloat(p(4)), p(5)))
