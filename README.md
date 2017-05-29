@@ -9,13 +9,15 @@ Implementing custom UDF,UDAF,Partitioner using Spark-2.1
 Working with DataFrames (ComplexSchema,DropDuplicates,DatasetConversion,GroupingAndAggregation)               
 Working with DataSets                                     
 Working with Parquet files                            
+Partitioning the data by a specific column and store it partition wise                             
 Loading Data from Cassnadra table using Spark             
 Working with Spark Catalog API to access Hive tables                          
 Inserting data in to Hive table (Managed,External) from Spark           
 Inserting data in to Hive Partitioned table as Parquet format (Managed,External) from Spark               
 Adding,Listing Partitions to Hive table using Spark               
 CRUD operations on Cassandra Using Spark                                                 
-Reading/Writing to S3 buckets Using Spark                  
+Reading/Writing to S3 buckets Using Spark       
+Spark MangoDB Integration                   
 
 
 
