@@ -19,6 +19,7 @@ CRUD operations on Cassandra Using Spark
 Reading/Writing to S3 buckets Using Spark       
 Spark MangoDB Integration                   
 
+<a href="https://github.com/Re1tReddy/Spark/tree/master/Spark-2.1/src/main/scala/com/datadog/metrics">Pushing Spark Accumulator Values as metrics to DataDog API</a>  
 
 
 Topics Covered in Spark 1.5     
@@ -50,8 +51,6 @@ Writing a Custom UDF,UDAF in Spark.
 Storing data as text,parquet file in to HDFS.     
 Integrating Spark with Mangodb.             
 
-
-<a href="https://github.com/Re1tReddy/Spark/tree/master/Spark-2.1/src/main/scala/com/datadog/metrics">Pushing Spark Accumulator Values as metrics to DataDog API</a>  
 
 ------------------------------------------------------------------------------------------------------------------------------------     
 
