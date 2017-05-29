@@ -11,6 +11,7 @@ Working with Spark Catalog API to access Hive tables
 Loading Data from Cassnadra table using Spark   
 CRUD operations on Cassandra Using Spark                                                 
 Reading/Writing to S3 buckets Using Spark                  
+Spark MangoDB Integration                                               
 
 <a href="https://github.com/Re1tReddy/Spark/tree/master/Spark-2.1/src/main/scala/com/datadog/metrics">Pushing Spark Accumulator Values as metrics to DataDog API</a>      
 
