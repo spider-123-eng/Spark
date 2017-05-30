@@ -22,6 +22,7 @@ object Spark_Accumulator {
     tags += ("class" -> getClass)
     tags += ("count" -> accum.value, "accum name" -> "total.charecters.counter")
     
+    //DataDog API Key needs to be generted by creating account in DataDog 
     val apiKey="947d12f46dead405bf019033434f0xxx"
     //initializing the metrics collector
     val metricsCollector = MetricsCollectorFactory.getDatadogCollector(apiKey, "dev")
