@@ -57,6 +57,17 @@
 			<version>${spark.version}</version>
 			<scope>provided</scope>
 		</dependency>
+		<!-- Spark Streaming -->
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-streaming_${scala.tools.version}</artifactId>
+			<version>${spark.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-streaming-kafka-0-8_${scala.tools.version}</artifactId>
+			<version>${spark.version}</version>
+		</dependency>
 		<!-- DataDog dependencies -->
 		<dependency>
 			<groupId>org.coursera</groupId>
