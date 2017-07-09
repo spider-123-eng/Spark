@@ -1,7 +1,7 @@
 package test
 
 import org.apache.spark.sql.SparkSession
-import com.rasa.metrics.MetricsCollectorFactory
+import com.datadog.metrics.MetricsCollectorFactory
 
 object MetricsTest {
   def main(args: Array[String]) {
