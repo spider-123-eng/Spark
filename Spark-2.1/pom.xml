@@ -106,6 +106,12 @@
 			<artifactId>spark-mongodb_2.11</artifactId>
 			<version>0.12.0</version>
 		</dependency>
+		<!-- MySQL Connector for Spark JDBC Connection -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>6.0.4</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<resources>
@@ -172,12 +178,7 @@
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-shade-plugin</artifactId>
-				<!-- The following option is to avoid version conflicts between: * Guava 
-					in this package and the Guava version available on the YARN worker nodes 
-					* breeze 0.12 (needed here) and breeze 0.11.2 (included in spark-assembly-1.6.1-hadoop2.6.0.jar) 
-					adopted from http://arjon.es/2015/10/12/making-hadoop-2-dot-6-plus-spark-cassandra-driver-play-nice-together/ 
-					using https://maven.apache.org/plugins/maven-shade-plugin/examples/class-relocation.html -->
+				<artifactId>maven-shade-plugin</artifactId>			
 				<executions>
 					<execution>
 						<phase>package</phase>
