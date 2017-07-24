@@ -1,6 +1,7 @@
-package com.spark2.examples
+package com.spark2.fileformats
 
 import org.apache.spark.sql.SparkSession
+import org.apache.hadoop.io.compress.GzipCodec
 
 object Spark_To_SequenceFiles {
   case class Purchase(customer_id: Int, purchase_id: Int, date: String, time: String, tz: String, amount: Double)
