@@ -1,4 +1,4 @@
-package com.spark2.examples
+package com.spark2.fileformats
 import org.apache.spark.sql.SparkSession
 
 object Spark_To_ObjectFile {
@@ -11,7 +11,7 @@ object Spark_To_ObjectFile {
     val sc = session.sparkContext
 
     val nums = sc.makeRDD(1 to 3).map(x => (x, "a" * x))
-    //nums.saveAsObjectFile("output/test")
+    nums.saveAsObjectFile("output/test")
 
     // Try reading the output back as an object file
     val output = sc.objectFile[(Int, String)]("output/test")
@@ -27,17 +27,17 @@ object Spark_To_ObjectFile {
 
     //Saving rdd as ObjectFile and reading back
     val empRDD = sc.parallelize(emps)
-    empRDD.saveAsObjectFile("output/empRdd")
+    empRDD.saveAsObjectFile("output/rdd_to_obj")
 
-    val resRDD = sc.objectFile[Any]("output/empRdd")
+    val resRDD = sc.objectFile[Any]("output/rdd_to_obj")
     resRDD.foreach(f => println(f))
 
     //Saving DataFrame as ObjectFile and reading back
     import session.implicits._
     val empDF = emps.toDF()
-    empDF.rdd.saveAsObjectFile("output/empDF")
+    empDF.rdd.saveAsObjectFile("output/df_to_obj")
 
-    val resDF = sc.objectFile[Any]("output/empDF")
+    val resDF = sc.objectFile[Any]("output/df_to_obj")
     resDF.foreach(f => println(f))
 
   }
