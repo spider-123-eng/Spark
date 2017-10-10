@@ -1,0 +1,17 @@
+# Configurations to backup cassandra tables
+cassandra_table_export: 
+
+              - table_name : insight
+                keyspace: demo_database
+                output_location: backup/cassandra/parquet_insight
+                duration_in_hour: 24
+                
+              - table_name : insight_rc_data
+                keyspace: demo_database
+                output_location: backup/cassandra/parquet_insight_rc_data
+                duration_in_hour: 24
+
+              - table_name : insight_rc_data_count
+                keyspace: demo_database
+                output_location: backup/cassandra/parquet_insight_rc_data_count
+                duration_in_hour: 24
