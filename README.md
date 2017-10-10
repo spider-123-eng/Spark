@@ -19,7 +19,8 @@ CRUD operations on Cassandra Using Spark
 Reading/Writing to S3 buckets Using Spark       
 Spark MangoDB Integration   
 Adding Hive Partitions by fetching data from cassandra.                                       
-Exporting/Backup Cassandra table data using spark.       
+Exporting/Backup Cassandra table data using spark.                
+Reading and Writing Data to Elastic Search Using Spark 2.x                                
 
 <a href="https://github.com/Re1tReddy/Spark/tree/master/Spark-2.1/src/main/scala/com/datadog/metrics">Pushing Spark Accumulator Values as metrics to DataDog API</a>  
 
@@ -51,8 +52,7 @@ Spark Window vs Sliding Interval.
 Spark Aggregations using DataFrame API.   
 Writing a Custom UDF,UDAF in Spark.                 
 Storing data as text,parquet file in to HDFS.     
-Integrating Spark with Mangodb.  
-               
+Integrating Spark with Mangodb.                 
 
 ------------------------------------------------------------------------------------------------------------------------------------     
 
