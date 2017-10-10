@@ -17,7 +17,9 @@ Inserting data in to Hive Partitioned table as Parquet format (Managed,External)
 Adding,Listing Partitions to Hive table using Spark               
 CRUD operations on Cassandra Using Spark                                                 
 Reading/Writing to S3 buckets Using Spark       
-Spark MangoDB Integration                   
+Spark MangoDB Integration   
+Adding Hive Partitions by fetching data from cassandra.                                       
+Exporting/Backup Cassandra table data using spark.       
 
 <a href="https://github.com/Re1tReddy/Spark/tree/master/Spark-2.1/src/main/scala/com/datadog/metrics">Pushing Spark Accumulator Values as metrics to DataDog API</a>  
 
@@ -50,8 +52,7 @@ Spark Aggregations using DataFrame API.
 Writing a Custom UDF,UDAF in Spark.                 
 Storing data as text,parquet file in to HDFS.     
 Integrating Spark with Mangodb.  
-Exporting/Backup Cassandra table data using spark.                
-
+               
 
 ------------------------------------------------------------------------------------------------------------------------------------     
 
