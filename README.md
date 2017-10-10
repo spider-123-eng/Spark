@@ -49,7 +49,8 @@ Spark Window vs Sliding Interval.
 Spark Aggregations using DataFrame API.   
 Writing a Custom UDF,UDAF in Spark.                 
 Storing data as text,parquet file in to HDFS.     
-Integrating Spark with Mangodb.             
+Integrating Spark with Mangodb.  
+Exporting/Backup Cassandra table data using spark.                
 
 
 ------------------------------------------------------------------------------------------------------------------------------------     
