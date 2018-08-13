@@ -135,6 +135,7 @@
 			<artifactId>delete-by-query</artifactId>
 			<version>${es.version}</version>		
 		<!-- xml parser -->
+		</dependency>
 	    <dependency>
 			<groupId>com.databricks</groupId>
 			<artifactId>spark-xml_2.11</artifactId>
