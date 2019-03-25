@@ -22,7 +22,7 @@ Adding Hive Partitions by fetching data from cassandra.
 Exporting/Backup Cassandra table data using spark.                
 Reading and Writing Data to Elastic Search Using Spark 2.x      
 Querying ElasticSearch Data From Spark 2.x                                                  
-
+Deleting data from ElasticSearch from spark Dataframe 
 <a href="https://github.com/Re1tReddy/Spark/tree/master/Spark-2.1/src/main/scala/com/datadog/metrics">Pushing Spark Accumulator Values as metrics to DataDog API</a>  
 
 
