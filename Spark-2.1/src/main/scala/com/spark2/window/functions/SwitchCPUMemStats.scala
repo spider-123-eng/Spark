@@ -13,9 +13,9 @@ object SwitchCPUMemStats extends App {
 
   import spark.implicits._
 
-  val input_switch_cpu = "/Users/revanth/temp/sw_hp_system_cpu_stats_records/date_month={2020}-{01}/date_hour={2020}-{01}-{13}-{04,05}"
-  val input_switch_mem = "/Users/revanth/temp/sw_hp_system_memory_stats_records/date_month={2020}-{01}/date_hour={2020}-{01}-{13}-{04,05}"
-  val input_switch_sys = "/Users/revanth/temp/sw_hp_system_info_stats_records/date_month={2020}-{01}/date_hour={2020}-{01}-{13}-{04,05}"
+  val input_switch_cpu = "input/sw_hp_system_cpu_stats_records/date_month={2020}-{01}/date_hour={2020}-{01}-{13}-{04,05}"
+  val input_switch_mem = "input/sw_hp_system_memory_stats_records/date_month={2020}-{01}/date_hour={2020}-{01}-{13}-{04,05}"
+  val input_switch_sys = "input/sw_hp_system_info_stats_records/date_month={2020}-{01}/date_hour={2020}-{01}-{13}-{04,05}"
 
   import org.apache.spark.sql.expressions.UserDefinedFunction
   import org.apache.spark.sql.functions.udf
