@@ -14,7 +14,7 @@
 	</repositories>
 	<properties>
 		<spark.version>1.5.2</spark.version>
-		<scala.version>2.10.4</scala.version>
+		<scala.version>2.13.1</scala.version>
 		<scalaBinaryVersion>2.10</scalaBinaryVersion>
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>1.7</maven.compiler.target>
